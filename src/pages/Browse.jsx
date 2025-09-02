@@ -111,7 +111,7 @@ const Browse = () => {
           </p>
           <div className="mt-6 bg-white rounded-full px-4 py-2 inline-flex items-center shadow-md">
             <span className="text-green-600 font-semibold mr-2">●</span>
-            <span className="text-gray-700">{projects.length} projects live</span>
+            <span className="text-gray-700">{projects.length} projects livee</span>
           </div>
         </div>
       </div>
