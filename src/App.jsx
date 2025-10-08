@@ -21,6 +21,7 @@ import MyInvestments from "./pages/MyInvestments";
 import InvestPage from "./pages/InvestPage";
 import Wallet from "./pages/Wallet";
 import Bookmarks from "./pages/Bookmarks";
+import About from "./pages/About";
 import Navbar from "./components/NavBar";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/create" element={<CreateProjectForm />} />
         <Route path="/community" element={<Community />} />
         <Route path="/browse" element={<Browse />} />
+  <Route path="/about" element={<About />} />
         {/* Dynamic routes for project-oriented experiences */}
         <Route path="/projectDet/:id" element={<ProjectDetails />} />
         <Route path="/profile" element={<Profile />} />
