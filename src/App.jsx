@@ -48,7 +48,7 @@ function App() {
         <Route path="/create" element={<CreateProjectForm />} />
         <Route path="/community" element={<Community />} />
         <Route path="/browse" element={<Browse />} />
-  <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
         {/* Dynamic routes for project-oriented experiences */}
         <Route path="/projectDet/:id" element={<ProjectDetails />} />
         <Route path="/profile" element={<Profile />} />
