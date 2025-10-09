@@ -47,6 +47,7 @@ const Browse = () => {
       filtered = filtered.filter(project =>
         project.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.shortDescription?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.createdBy.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.category?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }

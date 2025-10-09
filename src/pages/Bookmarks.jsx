@@ -32,19 +32,28 @@ const Bookmarks = () => {
             return;
           }
 
-          // Fetch all bookmarked projects
-          const projectsRef = collection(db, 'projects');
+
           const projectsPromises = bookmarkIds.map(async (projectId) => {
+          try {
             const projectDoc = await getDoc(doc(db, 'projects', projectId));
             if (projectDoc.exists()) {
               return { id: projectDoc.id, ...projectDoc.data() };
             }
             return null;
-          });
+          } catch (err) {
+            console.error(`Error fetching project ${projectId}:`, err);
+            return null;
+          }
+        });
+        //this helps us get the states like resolved fullfiled and pending from all the promises
+        const project = await Promise.allSettled(projectsPromises);
 
-          const projects = await Promise.all(projectsPromises);
-          const validProjects = projects.filter(p => p !== null);
-          setBookmarkedProjects(validProjects);
+        // Keep only fulfilled + non-null results
+        const validProjects = project
+          .filter(p => p.status === 'fulfilled' && p.value !== null)
+          .map(p => p.value);
+
+        setBookmarkedProjects(validProjects);
         }
       } catch (err) {
         console.error('Error fetching bookmarked projects:', err);
@@ -62,7 +71,7 @@ const Bookmarks = () => {
   };
 
   const formatFunding = (amount) => {
-    return amount?.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) || '$0';
+    return amount?.toLocaleString('en-US', { style: 'currency', currency: 'ETB', minimumFractionDigits: 0 }) || '$0';
   };
 
   if (loading) {

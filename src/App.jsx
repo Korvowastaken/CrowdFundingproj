@@ -27,8 +27,6 @@ import Navbar from "./components/NavBar";
 function App() {
   // Track whether the splash/loading experience has finished running
   const [loadingComplete, setLoadingComplete] = useState(false);
-
-  // if (!loadingComplete) {
   //   // Display the loading component until the asynchronous setup finishes
   //   return <Loading onComplete={() => setLoadingComplete(true)} />;
   // }
@@ -47,6 +45,7 @@ function App() {
         <Route path="/signing" element={<Signing />} />
         <Route path="/create" element={<CreateProjectForm />} />
         <Route path="/community" element={<Community />} />
+        <Route path="/about" element={<AboutNew />} />
         <Route path="/browse" element={<Browse />} />
         <Route path="/about" element={<About />} />
         {/* Dynamic routes for project-oriented experiences */}
