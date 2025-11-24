@@ -790,7 +790,7 @@ const Signing = () => {
         theme="light"
       />
       
-      <main
+      <main 
         className='w-screen flex flex-col md:flex-row overflow-hidden'
         style={isMobile ? { height: 'calc(100vh - 64px)', marginTop: '64px' } : undefined}
       >
@@ -807,7 +807,7 @@ const Signing = () => {
             <div className='text-color-b w-11/12 md:w-3xl max-w-[560px] px-4 md:px-0 gap-8 flex flex-col items-center justify-center'>
               <div
                 ref={signupLabel}
-                className={`font-titan pointer-events-none transition-transform duration-300 text-center ${isMobile && activePanel !== 'signup' ? 'translate-y-8' : ''}`}
+                className={`font-titan pointer-events-none transition-transform duration-300 text-center ${isMobile && activePanel !== 'signup' ? 'translate-y-20' : ''}`}
               >
                 Login
               </div>
@@ -889,7 +889,7 @@ const Signing = () => {
             <div className='text-color-e w-11/12 md:w-3xl max-w-[560px] px-4 md:px-0 g flex flex-col items-center justify-center relative top-10'>
               <div
                 ref={signinLabel}
-                className={`font-titan relative bottom-2 pointer-events-none transition-transform duration-300 text-center ${isMobile && activePanel !== 'login' ? 'translate-y-10' : ''}`}
+                className={`font-titan relative bottom-2 pointer-events-none transition-transform duration-300 text-center ${isMobile && activePanel !== 'login' ? 'translate-y-5' : ''}`}
               >
                 Sign Up
               </div>
